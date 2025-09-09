@@ -1,12 +1,89 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>It works</title>
-  </head>
-  <body>
-    <h1>It works 🎉</h1>
-    <p>This is the only file being published right now.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converted Markdown</title>
+</head>
+<body>
+<h1>Crop Yield Prediction Using Environmental Data</h1>
+
+<p><strong>Name(s):</strong> Jake Walkup  <br>
+<strong>Website Link:</strong> <a href="https://jakewalkup08.github.io/CropYieldPrediction/">CropYieldPrediction  </a><br>
+<hr><br>
+<h2>Introduction</h2><br>
+This project investigates how environmental and management factors influence <strong>crop yield (tons per hectare)</strong> using a dataset of 3,000 simulated records from Kaggle. The dataset includes rainfall (mm), soil quality index (1–10), farm size (hectares), sunlight exposure (hours), and fertilizer usage (kg per hectare).</p>
+
+<p>The main research question is:  <br>
+<strong>What are the most important factors that influence crop yield?</strong></p>
+
+<p>This topic was chosen because of its relevance to sustainability and agricultural efficiency. By analyzing how environmental inputs affect yield, we can better understand how to optimize productivity in an eco-friendly way.  <br>
+<hr><br>
+<h2>Data Cleaning and Exploratory Data Analysis</h2><br>
+<h3>Data Cleaning</h3><br>
+After reviewing the dataset, no missing values or invalid entries were detected, meaning the dataset was already clean and ready for analysis. This ensured that subsequent steps were not biased by incomplete or erroneous information.  <br>
+<h3>Univariate Analysis</h3><br>
+<ul><br>
+<li><strong>Rainfall (500–2000 mm):</strong> Fairly uniform distribution across the range, capturing diverse weather conditions.  </li><br>
+<li><strong>Soil Quality Index (1–10):</strong> Evenly distributed across integer categories, confirming its role as an ordinal variable.  </li><br>
+<li><strong>Farm Size (10–1000 hectares):</strong> Spread evenly across the range, representing both small and large farms.  </li><br>
+<li><strong>Sunlight Hours (4–12):</strong> Captured as discrete values, distributed evenly across the dataset.  </li><br>
+<li><strong>Fertilizer Usage (100–3000 kg):</strong> Widely distributed with some concentration in certain ranges.  </li><br>
+<li><strong>Crop Yield:</strong> Displayed a multimodal distribution, suggesting the presence of subgroups within the dataset (e.g., high-yield vs. low-yield farms).  </li><br>
+</ul></p>
+
+<p><strong>Key Insight:</strong> The multimodal pattern in crop yield hints at complex interactions between factors rather than single-variable effects.  <br>
+<h3>Bivariate Analysis</h3><br>
+Scatterplots revealed the following relationships:<br>
+<ul><br>
+<li><strong>Rainfall vs. Yield:</strong> No strong correlation; rainfall alone does not determine yield.  </li><br>
+<li><strong>Soil Quality vs. Yield:</strong> Yields appear consistent across soil quality levels, suggesting weak standalone predictive power.  </li><br>
+<li><strong>Farm Size vs. Yield:</strong> Strong positive relationship; larger farms consistently achieved higher yields.  </li><br>
+<li><strong>Sunlight vs. Yield:</strong> Minimal variation across sunlight levels, suggesting limited direct influence.  </li><br>
+<li><strong>Fertilizer vs. Yield:</strong> Slight positive trend, but widely scattered, implying fertilizer effects depend on other conditions.  </li><br>
+</ul></p>
+
+<p><strong>Key Takeaway:</strong> Farm size shows the clearest positive relationship with yield, while other factors display weaker patterns. This points to multi-factor interactions driving yield variability.  <br>
+<hr><br>
+<h2>Hypothesis Testing</h2><br>
+<strong>Hypothesis:</strong> Does farm size significantly affect crop yield?</p>
+
+<ul>
+<li><strong>Null Hypothesis (H₀):</strong> Farm size has no effect on yield. Any differences are due to chance.  </li>
+<li><strong>Alternative Hypothesis (H₁):</strong> Farm size has a significant positive effect on yield.  </li>
+</ul>
+
+<p>A permutation test comparing farm size and yield found a <strong>correlation of 0.982</strong> with a <strong>p-value < 0.001</strong>. This allowed rejection of the null hypothesis, providing strong evidence that farm size is significantly associated with crop yield in the dataset.  <br>
+<hr><br>
+<h2>Framing a Prediction Problem</h2><br>
+Based on exploratory analysis, the prediction problem was defined as:  <br>
+<strong>Can we predict crop yield (tons per hectare) based on farm size (hectares)?</strong></p>
+
+<ul>
+<li><strong>Response Variable:</strong> Crop Yield (continuous)  </li>
+<li><strong>Predictor Variable:</strong> Farm Size (hectares)  </li>
+<li><strong>Evaluation Metric:</strong> Root Mean Squared Error (RMSE), supplemented by R² for variance explained.  </li>
+</ul>
+
+<p>At the time of prediction, farm size is assumed to be known, making it a valid predictor.  <br>
+<hr><br>
+<h2>Final Model</h2><br>
+A simple linear regression model was trained using <strong>farm size</strong> as the sole predictor.</p>
+
+<ul>
+<li><strong>RMSE:</strong> 21.46  </li>
+<li><strong>R² Score:</strong> 0.978  </li>
+<li><strong>Intercept:</strong> 78.53  </li>
+<li><strong>Coefficient:</strong> 0.59  </li>
+</ul>
+
+<p>This indicates that farm size alone explains nearly 98% of the variation in crop yield. The regression line closely matched the distribution of actual yields, confirming the strong predictive power of farm size.</p>
+
+<img src="./farmsizevscropyield.png" alt="Farm size vs crop yield">
+<hr>
+<h2>Conclusion</h2>
+This project demonstrated that <strong>farm size is the strongest predictor of crop yield</strong> in the simulated dataset, explaining nearly all yield variability on its own. While other factors such as rainfall, sunlight, soil quality, and fertilizer showed weak or scattered patterns individually, their interactions may influence outcomes in more complex real-world settings.
+
+<p>Future work could expand the model to a <strong>multivariate regression</strong> including additional features, enabling more nuanced insights into agricultural productivity and sustainability.</p>
+</body>
 </html>
