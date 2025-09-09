@@ -5,10 +5,6 @@ title: Home
 
 ---
 
-# CropYieldPrediction
-
-![Farm size vs crop yield](./farmsizevscropyield.png)
-
 # Crop Yield Prediction Using Environmental Data
 
 **Name(s):** Jake Walkup  
