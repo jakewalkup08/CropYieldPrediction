@@ -4,8 +4,164 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Converted Markdown</title>
+
+<style>
+  :root{
+    --bg: #0b0c0f;
+    --panel: #11131a;
+    --text: #e6e7eb;
+    --muted: #b5b9c6;
+    --accent: #7aa2ff;
+    --accent-2: #9ef0c0;
+    --border: #1d2130;
+    --code-bg: #0f1320;
+    --shadow: 0 8px 24px rgba(0,0,0,0.35);
+    --radius: 18px;
+    --maxw: 900px;
+    --lh: 1.65;
+  }
+
+  html, body {
+    background: linear-gradient(180deg, var(--bg), #0e1016 40%, #0b0c0f);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: var(--lh);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body { margin: 0; padding: 32px 18px 60px; }
+
+  .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 38px 36px;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25;
+    margin: 1.4em 0 0.6em;
+    font-weight: 750;
+    letter-spacing: 0.2px;
+  }
+  h1 { font-size: clamp(2rem, 3.2vw, 2.6rem); }
+  h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+  h3 { font-size: clamp(1.35rem, 2.1vw, 1.7rem); }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1.1rem; color: var(--muted); }
+  h6 { font-size: 1rem; color: var(--muted); }
+
+  /* Paragraphs & Lists */
+  p { margin: 0.8em 0; }
+  ul, ol { padding-left: 1.3em; margin: 0.8em 0; }
+  li { margin: 0.35em 0; }
+  ul ul, ol ol, ul ol, ol ul { margin: 0.35em 0; }
+
+  /* Links */
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    position: relative;
+  }
+  a:hover { color: var(--accent-2); }
+  a:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; }
+
+  /* Blockquotes */
+  blockquote {
+    margin: 1.2em 0;
+    padding: 0.8em 1em;
+    background: rgba(122,162,255,0.06);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    color: var(--muted);
+  }
+
+  /* Code */
+  code, pre, kbd, samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  code {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 0.1em 0.35em;
+    border-radius: 10px;
+    color: #e8f0ff;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 1em 1.2em;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    overflow: auto;
+    margin: 1em 0;
+  }
+  pre code { background: none; border: 0; padding: 0; color: #e8f0ff; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 0.98rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+  }
+  th {
+    text-align: left;
+    background: rgba(255,255,255,0.04);
+  }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    margin: 0.6em 0;
+  }
+
+  /* Horizontal rule */
+  hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 2em 0;
+  }
+
+  /* Helper: lead paragraph after top heading */
+  h1 + p.lead, h2 + p.lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-top: -0.6em;
+  }
+
+  /* Small header badge */
+  .doc-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    background: rgba(255,255,255,0.04);
+    margin-bottom: 14px;
+  }
+</style>
+
 </head>
 <body>
+<main class=\"container\">
 <h1>Crop Yield Prediction Using Environmental Data</h1>
 
 <p><strong>Name(s):</strong> Jake Walkup  <br>
@@ -85,5 +241,6 @@ A simple linear regression model was trained using <strong>farm size</strong> as
 This project demonstrated that <strong>farm size is the strongest predictor of crop yield</strong> in the simulated dataset, explaining nearly all yield variability on its own. While other factors such as rainfall, sunlight, soil quality, and fertilizer showed weak or scattered patterns individually, their interactions may influence outcomes in more complex real-world settings.
 
 <p>Future work could expand the model to a <strong>multivariate regression</strong> including additional features, enabling more nuanced insights into agricultural productivity and sustainability.</p>
+</main>
 </body>
 </html>
