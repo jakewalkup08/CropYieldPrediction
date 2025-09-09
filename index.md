@@ -1,10 +1,3 @@
----
-
-layout: default
-title: Home
-
----
-
 # Crop Yield Prediction Using Environmental Data
 
 **Name(s):** Jake Walkup  
