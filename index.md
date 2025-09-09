@@ -64,7 +64,7 @@ At the time of prediction, farm size is assumed to be known, making it a valid p
 
 ---
 
-## Baseline Model
+## Final Model
 A simple linear regression model was trained using **farm size** as the sole predictor.  
 
 - **RMSE:** 21.46  
@@ -74,21 +74,7 @@ A simple linear regression model was trained using **farm size** as the sole pre
 
 This indicates that farm size alone explains nearly 98% of the variation in crop yield. The regression line closely matched the distribution of actual yields, confirming the strong predictive power of farm size.  
 
----
-
-## Final Model
-The final model used the same regression approach but emphasized interpretability. The strong linear relationship between farm size and yield made additional transformations unnecessary.  
-
-The regression confirmed:  
-- Each additional hectare is associated with an increase of **~0.59 tons/ha** in yield.  
-- The linear fit captured nearly all variation in yield, leaving little room for improvement without incorporating additional features such as rainfall, soil quality, or fertilizer usage.  
-
----
-
-## Fairness Analysis
-To assess fairness, the model was evaluated across subgroups of farms. A potential concern was whether the model systematically favored large farms over small farms.  
-
-Permutation tests showed that while larger farms achieved higher yields, this effect was consistent with the dataset’s design rather than bias introduced by the model. Since farm size is the sole predictor and directly determines yield in this dataset, the model performed equitably across subgroups.  
+![Final Model Graph](farmsizevscropyield.png)
 
 ---
 
