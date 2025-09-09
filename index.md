@@ -1,3 +1,14 @@
+---
+
+layout: default
+title: Home
+
+---
+
+# CropYieldPrediction
+
+![Farm size vs crop yield](./farmsizevscropyield.png)
+
 # Crop Yield Prediction Using Environmental Data
 
 **Name(s):** Jake Walkup  
@@ -74,7 +85,7 @@ A simple linear regression model was trained using **farm size** as the sole pre
 
 This indicates that farm size alone explains nearly 98% of the variation in crop yield. The regression line closely matched the distribution of actual yields, confirming the strong predictive power of farm size.  
 
-![Final Model Graph](farmsizevscropyield.png)
+![Farm size vs crop yield](./farmsizevscropyield.png)
 
 ---
 
