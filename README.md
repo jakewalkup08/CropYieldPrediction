@@ -1,5 +1,3 @@
-# CropYieldPrediction
-
 # 🌾 Crop Yield Prediction Using Environmental Data
 
 **Author:** Jake Walkup  
